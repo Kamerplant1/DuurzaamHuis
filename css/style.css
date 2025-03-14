@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+}
+
+html {
+    background: #1F1F1F;
+    height: 200vh;
+}
+
+body {
+    font-size: 3rem;
+}
+
+.infoOverflow {
+    overflow: hidden;
+}
+.hexagonKiller{
+    width: 100px;
+    height: 100px;
+    background: #1F1F1F;
+    position: absolute;
+    margin-left: 1050px;
+    margin-top: 400px;
+}
+
+header img {
+    position: absolute;
+    margin-top: -8.5rem;
+}
+
+header :not(img) {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #373737;
+    height: 70px;
+}
+.headerText{
+    color:  rgb(203, 203, 203);
+    text-decoration: none;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+.headerText:hover{
+color: white;
+}
+.headerText:active{
+color: rgb(152, 152, 152);
+}
+
+ul {
+    list-style: none;
+    font-size: 30px;
+}
+
+li {
+    list-style: none;
+}
+
+header img {
+    height: 100px;
+    position: absolute;
+}
+
+body>img {
+    margin-top: 10.1vh;
+    margin-left: 70vw;
+    height: 700px;
+    position: absolute;
+}
+
+.rectangle {
+    height: 25rem;
+    width: 44rem;
+    border-radius: 15px;
+    background: rgb(203, 203, 203);
+    margin-top: 20px;
+}
+.rectangle:hover{
+    transform: scale(102%);
+    transition: 0.5s;
+}
+.rectangle:not(:hover){
+    transform:scale(100%);
+    transition-duration: 0.5s;
+}
+
+.rectangleParent {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-top: 5rem;
+}
+
+.rectangle p{
+    font-size: 2rem;
+}
+.grafiek p{
+    font-size: 2rem;
+}
+.witscherm{
+    background: rgb(203, 203, 203);
+    width: 100%;
+    height: 65vh;
+    position: absolute;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.grafiek{
+    background: rgb(247, 247, 247);
+    height: 35rem;
+    width: 45rem;
+    border-radius: 15px;
+}
+footer{
+    height: 10vh;
+    width: 100%;
+    background: #373737;
+    position: absolute;
+    margin-top: 67.5rem;
+}
+.clockOutline{
+    background: gray;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 141rem;
+    margin-top: 0.5rem;
+    height: 2rem;
+    font-size: 30px;
+    position: fixed;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 10;
+    border-radius: 0.3rem;
+    padding: 1rem;
+}
+.clockOutline img{
+scale: 150%;
+}
+.clockOutline span{
+margin-left: 0.3rem;
+}
