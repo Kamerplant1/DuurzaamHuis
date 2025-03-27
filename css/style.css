@@ -1,4 +1,4 @@
-* {
+ * {
     margin: 0;
     padding: 0;
     font-size: 62.5%;
@@ -7,6 +7,7 @@
 html {
     background: #1F1F1F;
     height: 200vh;
+    font-family: sans-serif;
 }
 
 body {
@@ -92,15 +93,27 @@ body>img {
     margin-top: 2rem;
 }
 
-.rectangle:hover {
-    transform: scale(102%);
-    transition: 0.5s;
+.rectanglerow1 {
+    height: 50rem;
 }
 
-.rectangle:not(:hover) {
-    transform: scale(100%);
-    transition-duration: 0.5s;
+.buitentemp {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    background: linear-gradient(to bottom, #00BFFF, #87CEEB);
+    font-size: 5rem;
+    color: white;
+    gap:2rem;
 }
+
+.buitentemp > img {
+    width: 20%;
+    height: 20%;
+    margin-bottom: 1rem;
+}
+
 
 .rectangleParent {
     display: flex;
@@ -231,3 +244,21 @@ footer {
     text-align: center;
 margin-top: 1rem;
 }
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
