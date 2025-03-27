@@ -16,18 +16,28 @@ body {
 .infoOverflow {
     overflow: hidden;
 }
-.hexagonKiller{
-    width: 100px;
-    height: 100px;
+
+.hexagonKiller {
+    width: 10rem;
+    height: 10rem;
     background: #1F1F1F;
     position: absolute;
-    margin-left: 1050px;
-    margin-top: 400px;
+    margin-left: 105rem;
+    margin-top: 40rem;
 }
 
 header img {
     position: absolute;
     margin-top: -8.5rem;
+    scale: 70%;
+}
+
+header p{
+    position: absolute;
+    color: white;
+    margin-top: -70px;
+    margin-left: 100px;
+    font-size: large;
 }
 
 header :not(img) {
@@ -35,24 +45,27 @@ header :not(img) {
     align-items: center;
     justify-content: space-evenly;
     background: #373737;
-    height: 70px;
+    height: 7rem;
 }
-.headerText{
-    color:  rgb(203, 203, 203);
+
+.headerText {
+    color: rgb(203, 203, 203);
     text-decoration: none;
-    font-size: 20px;
+    font-size: 2rem;
     font-family: sans-serif;
 }
-.headerText:hover{
-color: white;
+
+.headerText:hover {
+    color: white;
 }
-.headerText:active{
-color: rgb(152, 152, 152);
+
+.headerText:active {
+    color: rgb(152, 152, 152);
 }
 
 ul {
     list-style: none;
-    font-size: 30px;
+    font-size: 3rem;
 }
 
 li {
@@ -60,30 +73,32 @@ li {
 }
 
 header img {
-    height: 100px;
+    height: 10rem;
     position: absolute;
 }
 
 body>img {
     margin-top: 10.1vh;
     margin-left: 70vw;
-    height: 700px;
+    height: 70rem;
     position: absolute;
 }
 
 .rectangle {
     height: 25rem;
     width: 44rem;
-    border-radius: 15px;
+    border-radius: 1.5rem;
     background: rgb(203, 203, 203);
-    margin-top: 20px;
+    margin-top: 2rem;
 }
-.rectangle:hover{
+
+.rectangle:hover {
     transform: scale(102%);
     transition: 0.5s;
 }
-.rectangle:not(:hover){
-    transform:scale(100%);
+
+.rectangle:not(:hover) {
+    transform: scale(100%);
     transition-duration: 0.5s;
 }
 
@@ -96,13 +111,15 @@ body>img {
     margin-top: 5rem;
 }
 
-.rectangle p{
+.rectangle p {
     font-size: 2rem;
 }
-.grafiek p{
+
+.grafiek p {
     font-size: 2rem;
 }
-.witscherm{
+
+.witscherm {
     background: rgb(203, 203, 203);
     width: 100%;
     height: 65vh;
@@ -112,27 +129,30 @@ body>img {
     justify-content: space-evenly;
     align-items: center;
 }
-.grafiek{
+
+.grafiek {
     background: rgb(247, 247, 247);
     height: 35rem;
     width: 45rem;
-    border-radius: 15px;
+    border-radius: 1.5rem;
 }
-footer{
+
+footer {
     height: 10vh;
     width: 100%;
     background: #373737;
     position: absolute;
     margin-top: 67.5rem;
 }
-.clockOutline{
+
+.clockOutline {
     background: gray;
     display: flex;
     justify-content: flex-end;
     margin-left: 141rem;
     margin-top: 0.5rem;
     height: 2rem;
-    font-size: 30px;
+    font-size: 3rem;
     position: fixed;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -140,9 +160,74 @@ footer{
     border-radius: 0.3rem;
     padding: 1rem;
 }
-.clockOutline img{
-scale: 150%;
+
+.clockOutline img {
+    scale: 150%;
 }
-.clockOutline span{
-margin-left: 0.3rem;
+
+.clockOutline span {
+    margin-left: 0.3rem;
+}
+
+.weather-day {
+    border: 0.1rem solid #ccc;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    display: inline-block;
+}
+
+.infoBackground {
+    width: 60rem;
+    height: 20rem;
+    background: rgb(70, 70, 70);
+    border-radius: 1.5rem;
+    position: absolute;
+    margin-top: 12rem;
+    margin-left: 23rem;
+}
+
+.infoBackground h1 {
+    font-family: sans-serif;
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.infoBackground p {
+    font-family: sans-serif;
+    font-size: 2rem;
+    color: rgb(195, 195, 195);
+    font-weight: 100;
+    text-align: center;
+    padding: 2rem;
+}
+
+.infoBackgroundTeam {
+    width: 60rem;
+    height: 20rem;
+    background: rgb(70, 70, 70);
+    border-radius: 1.5rem;
+    position: absolute;
+    margin-top: 38rem;
+    margin-left: 23rem;
+}
+
+.infoBackgroundTeam h1 {
+    font-family: sans-serif;
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+    text-align: center;
+    margin-top: 1rem;
+}
+.infoBackgroundTeam li{
+    font-family: sans-serif;
+    font-size: 2rem;
+    color: rgb(195, 195, 195);
+    font-weight: 100;
+    text-align: center;
+margin-top: 1rem;
 }

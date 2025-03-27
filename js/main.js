@@ -1,3 +1,6 @@
+console.log("JS is geladen");
+
+
 function updateTime() {
     const now = new Date();
     
@@ -22,3 +25,4 @@ updateTime();
 updateImage();
 setInterval(updateTime, 1000);
 setInterval(updateImage, 60000);
+
