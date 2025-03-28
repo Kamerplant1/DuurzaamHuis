@@ -55,3 +55,74 @@ updateWeatherData();
 
 // dit hierboven is voor de weather api voor actuele buitentemperatuur (Van Tristan).
 
+const apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=52.374&longitude=4.8897&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=Europe/Amsterdam";
+
+async function fetchWeatherData() {
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        updateWeatherUI(data);
+    } catch (error) {
+        console.error("Error fetching weather data:", error);
+    }
+}
+
+function getFormattedDate(daysToAdd = 0) {
+    const date = new Date();
+    date.setDate(date.getDate() + daysToAdd);
+    
+    const days = ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"];
+    const dayName = days[date.getDay()];
+    const day = date.getDate();
+    
+    return `${dayName} ${day}`;
+}
+
+function getWeatherIcon(weatherCode) {
+    const weatherIcons = {
+        0: 'clear.png',
+        1: 'slightly-cloudy.png',
+        2: 'cloudy.png',
+        3: 'cloudy.png',
+        45: 'fog.png',
+        51: 'rain.png',
+        53: 'rain.png',
+        55: 'rain.png',
+        61: 'rain.png',
+        71: 'rain.png',
+        73: 'rain.png',
+        80: 'light-storm.png',
+        95: 'storm.png'
+    };
+    
+    return weatherIcons[weatherCode] || 'default.png';
+}
+
+function updateWeatherUI(data) {
+    const dailyTempsMax = data.daily.temperature_2m_max;
+    const dailyTempsMin = data.daily.temperature_2m_min;
+    const dailyWeatherCodes = data.daily.weathercode;
+
+    document.getElementById("forecast-day1-date").textContent = getFormattedDate(0);
+    document.getElementById("forecast-day2-date").textContent = getFormattedDate(1);
+    document.getElementById("forecast-day3-date").textContent = getFormattedDate(2);
+
+    document.getElementById("forecast-day1-temp-max").textContent = `${dailyTempsMax[0]}°C`;
+    document.getElementById("forecast-day1-temp-min").textContent = `${dailyTempsMin[0]}°C`;
+    document.getElementById("forecast-day1-img").src = `img/${getWeatherIcon(dailyWeatherCodes[0])}`;
+
+    document.getElementById("forecast-day2-temp-max").textContent = `${dailyTempsMax[1]}°C`;
+    document.getElementById("forecast-day2-temp-min").textContent = `${dailyTempsMin[1]}°C`;
+    document.getElementById("forecast-day2-img").src = `img/${getWeatherIcon(dailyWeatherCodes[1])}`;
+
+    document.getElementById("forecast-day3-temp-max").textContent = `${dailyTempsMax[2]}°C`;
+    document.getElementById("forecast-day3-temp-min").textContent = `${dailyTempsMin[2]}°C`;
+    document.getElementById("forecast-day3-img").src = `img/${getWeatherIcon(dailyWeatherCodes[2])}`;
+}
+
+fetchWeatherData();
+
+//hierboven is de weersvoorspelling (Jasper)
