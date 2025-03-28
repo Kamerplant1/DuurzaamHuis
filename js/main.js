@@ -1,9 +1,8 @@
-console.log("JS is geladen");
-
+console.log("JS is loaded");
 
 function updateTime() {
     const now = new Date();
-    
+
     const hours = now.getHours().toString().padStart(2, '0');
     const minutes = now.getMinutes().toString().padStart(2, '0');
     const seconds = now.getSeconds().toString().padStart(2, '0');
@@ -14,10 +13,10 @@ function updateTime() {
 function updateImage() {
     const img = document.getElementById("dynamicImage");
     if (!img) return;
-    
+
     const now = new Date();
     const hours = now.getHours();
-    
+
     img.src = (hours >= 19 || hours < 7) ? "img/moon.png" : "img/sun.webp";
 }
 
@@ -26,7 +25,7 @@ updateImage();
 setInterval(updateTime, 1000);
 setInterval(updateImage, 60000);
 
-// Dit stuk hierboven is voor de tijdbalk die heeft jasper gemaakt.
+// Weather API for current temperature (Jasper)
 const buitentemperatuur = document.getElementById("js--actuelebuitentemp");
 const weatherImage = document.getElementById("js--weatherImg");
 const weatherType = document.getElementById("js--weatherType");
@@ -50,11 +49,11 @@ function updateWeatherData() {
             }
         });
 }
+
 setInterval(updateWeatherData, 3000);
 updateWeatherData();
 
-// dit hierboven is voor de weather api voor actuele buitentemperatuur (Van Tristan).
-
+// Weather forecast API (Jasper)
 const apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=52.374&longitude=4.8897&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=Europe/Amsterdam";
 
 async function fetchWeatherData() {
@@ -73,12 +72,15 @@ async function fetchWeatherData() {
 function getFormattedDate(daysToAdd = 0) {
     const date = new Date();
     date.setDate(date.getDate() + daysToAdd);
-    
+
+    const months = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"];
     const days = ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"];
+
     const dayName = days[date.getDay()];
+    const monthName = months[date.getMonth()];
     const day = date.getDate();
-    
-    return `${dayName} ${day}`;
+
+    return `${dayName} ${day} ${monthName}`;
 }
 
 function getWeatherIcon(weatherCode) {
@@ -97,7 +99,7 @@ function getWeatherIcon(weatherCode) {
         80: 'light-storm.png',
         95: 'storm.png'
     };
-    
+
     return weatherIcons[weatherCode] || 'default.png';
 }
 
@@ -124,5 +126,3 @@ function updateWeatherUI(data) {
 }
 
 fetchWeatherData();
-
-//hierboven is de weersvoorspelling (Jasper)
