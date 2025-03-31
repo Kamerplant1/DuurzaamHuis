@@ -25,7 +25,7 @@ updateImage();
 setInterval(updateTime, 1000);
 setInterval(updateImage, 60000);
 
-// Weather API for current temperature (Jasper)
+// Weather API for current temperature (Tristan)
 const buitentemperatuur = document.getElementById("js--actuelebuitentemp");
 const weatherImage = document.getElementById("js--weatherImg");
 const weatherType = document.getElementById("js--weatherType");

@@ -116,12 +116,12 @@
 
 
  .rectangleParent {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 4rem;
-    margin-top: 5rem;
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     flex-wrap: wrap;
+     gap: 4rem;
+     margin-top: 5rem;
  }
 
  .rectangle p {
@@ -296,14 +296,16 @@
  }
 
  .fade-in-2 {
-    opacity: 0;
-    animation: fadeIn 2s ease-in-out forwards;
-}
-.fade-in-3{
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards;
-}
-/*tot hier is forecast (jasper)*/   
+     opacity: 0;
+     animation: fadeIn 2s ease-in-out forwards;
+ }
+
+ .fade-in-3 {
+     opacity: 0;
+     animation: fadeIn 1s ease-in-out forwards;
+ }
+
+ /*tot hier is forecast (jasper)*/
 
  @keyframes fadeIn {
      0% {
@@ -316,28 +318,73 @@
          transform: translateY(0);
      }
  }
- @media screen and (max-width: 768px) { /*tablet*/
-    body {
-        font-size: 2.5rem;
-    }
 
-    .rectangle {
-        width: 90%;
-        height: auto;
+ @media screen and (max-width: 768px) {
+    *{
+        z-index: 2;
     }
+     /*tablet*/
+     body {
+         font-size: 2.5rem;
+     }
 
-    .forecast-container {
-        flex-direction: column;
+     .rectangle {
+         width: 90%;
+         height: auto;
+     }
+
+     .forecast-container {
+         flex-direction: column;
+     }
+
+     .forecast-day1-img,
+     .forecast-day2-img,
+     .forecast-day3-img {
+         width: 100%;
+         height: auto;
+     }
+     body >img{
+        height: 90rem;
+        z-index: 1;
+        margin-top: 7rem;
+     }
+     .hexagonKiller{
+        display: none;
+     }
+ }
+ @media screen and (max-width: 1024px) {
+    *{
+        z-index: 2;
     }
-
-    .forecast-day1-img, .forecast-day2-img, .forecast-day3-img {
-        width: 100%;
-        height: auto;
+    header ul {
+        width: 150vw;
+        padding: 0;
+        margin: 0 auto;
     }
-}
-@media screen and (max-width: 375px) { /* kleine telefoon*/
+    body >img{
+        height: 90rem;
+        z-index: 1;
+        margin-top: 7rem;
+     }
+     .infoBackground{
+        margin-top: 5rem;
+     }
+     .infoBackgroundTeam{
+        margin-top: 30rem;
+     }
+ }
+ @media screen and (max-width: 768px) {
+    header ul {
+        width: 170vw;
+        padding: 0;
+        margin: 0 auto;
+    }
+ }
 
-    /*home*/
+ @media screen and (min-width: 0px) and (max-width: 431px) {
+    /* Kleine telefoon */
+
+    /* Home */
     body {
         font-size: 2rem;
     }
@@ -351,76 +398,78 @@
         flex-direction: column;
     }
 
-    .forecast-day1-img, .forecast-day2-img, .forecast-day3-img {
+    .forecast-day1-img,
+    .forecast-day2-img,
+    .forecast-day3-img {
         width: 100%;
         height: auto;
     }
 
-    /*info*/
-
-    .infoBackground {
-        width: 60rem;
-        height: 20rem;
-        background: rgb(70, 70, 70);
-        border-radius: 1.5rem;
-        position: absolute;
-        margin-top: 12rem;
-        margin-left: 23rem;
-    }
-   
-    .infoBackground h1 {
-        font-family: sans-serif;
-        font-size: 3rem;
-        color: rgb(255, 255, 255);
-        font-weight: 100;
-        text-align: center;
-        margin-top: 1rem;
-    }
-   
-    .infoBackground p {
-        font-family: sans-serif;
-        font-size: 2rem;
-        color: rgb(195, 195, 195);
-        font-weight: 100;
-        text-align: center;
-        padding: 2rem;
-    }
-   
+    /* Info section */
+    .infoBackground,
     .infoBackgroundTeam {
-        width: 60rem;
-        height: 20rem;
+        width: 35rem;
+        height: 15rem;
         background: rgb(70, 70, 70);
         border-radius: 1.5rem;
-        position: absolute;
-        margin-top: 38rem;
-        margin-left: 23rem;
+        text-align: center;
+        padding: 1rem;
     }
-   
+
+    .infoBackground h1,
     .infoBackgroundTeam h1 {
-        font-family: sans-serif;
-        font-size: 3rem;
+        font-size: 2rem;
         color: rgb(255, 255, 255);
         font-weight: 100;
-        text-align: center;
-        margin-top: 1rem;
     }
-   
+
+    .infoBackground p,
     .infoBackgroundTeam li {
-        font-family: sans-serif;
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: rgb(195, 195, 195);
         font-weight: 100;
         text-align: center;
-        margin-top: 1rem;
+        padding: 0rem;
     }
-    header p{
-        visibility: hidden;
+
+    header p {
+        display: none;
     }
-    header ul{
+
+    header ul {
         display: block;
-        width: 110vw;
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
     }
-    header{
-        width: 100vw;
+
+    .infoHeader {
+        min-width: 100vw;
+        background: none;
+        box-shadow: none;
+    }
+
+    .hexagonKiller {
+        display: none;
+    }
+
+    body > img {
+        display: none;
+    }
+
+    .doelEnTeamParent {
+        margin-left: -50px;
+    }
+
+    .infoOverflow {
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+        overflow-y: hidden;
+        max-width: 100%;
     }
 }
