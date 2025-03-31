@@ -36,8 +36,8 @@
  header p {
      position: absolute;
      color: white;
-     margin-top: -70px;
-     margin-left: 100px;
+     margin-top: -7rem;
+     margin-left: 10rem;
      font-size: large;
  }
 
@@ -86,7 +86,7 @@
  }
 
  .rectangle {
-     height: 25rem;
+     height: 50rem;
      width: 44rem;
      border-radius: 1.5rem;
      background: rgb(203, 203, 203);
@@ -116,12 +116,12 @@
 
 
  .rectangleParent {
-     display: flex;
-     justify-content: space-evenly;
-     align-items: center;
-     flex-wrap: wrap;
-     gap: 4rem;
-     margin-top: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-top: 5rem;
  }
 
  .rectangle p {
@@ -141,12 +141,15 @@
      display: flex;
      justify-content: space-evenly;
      align-items: center;
+     flex-wrap: wrap;
+     gap: 4rem;
+     margin-top: 5rem;
  }
 
  .grafiek {
      background: rgb(247, 247, 247);
      height: 35rem;
-     width: 45rem;
+     width: 44rem;
      border-radius: 1.5rem;
  }
 
@@ -156,6 +159,11 @@
      background: #373737;
      position: absolute;
      margin-top: 67.5rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: rgb(208, 208, 208);
+     text-align: center;
  }
 
  .clockOutline {
@@ -252,6 +260,7 @@
      animation-delay: 0.3s;
  }
 
+ /*vanaf hier is forecast (jasper)*/
  #jasper-weather,
  #general-weather {
      display: flex;
@@ -260,7 +269,7 @@
      justify-content: center;
      text-align: center;
      background-color: rgba(255, 255, 255, 0.9);
-     border-radius: 10px;
+     border-radius: 1rem;
  }
 
  #jasper-weather img,
@@ -280,63 +289,26 @@
      }
  }
 
- .fade-in-2 {
-     opacity: 0;
-     animation: fadeIn 2s ease-in-out forwards;
- }
-
- #forecast {
-     margin-top: 1rem;
- }
-
- #forecast div {
-     margin: 1rem 0;
- }
-
- #forecast p {
-     font-size: 1.6rem;
- }
-
- #forecast strong {
-     font-weight: bold;
- }
-
  h2 {
      color: #333;
      font-size: 2rem;
      margin-bottom: 1rem;
  }
 
- .forecast-container {
-     display: flex;
-     justify-content: space-around;
-     gap: 2rem;
-     margin-top: 2rem;
-     flex-wrap: wrap;
-     padding: 0 1rem;
- }
-
- .forecast-day3-img, .forecast-day2-img, .forecast-day1-img {
-     width: 30rem;
-     height: 30rem;
-     margin-top: 1rem;
- }
-
- .forecast-temp p {
-     margin: 5px 0;
- }
-
- .forecast-date {
-     font-weight: bold;
-     margin-top: 10px;
- }
-
-
+ .fade-in-2 {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+.fade-in-3{
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+/*tot hier is forecast (jasper)*/   
 
  @keyframes fadeIn {
      0% {
          opacity: 0;
-         transform: translateY(10px);
+         transform: translateY(1rem);
      }
 
      100% {
@@ -344,3 +316,108 @@
          transform: translateY(0);
      }
  }
+ @media screen and (max-width: 768px) { /*tablet*/
+    body {
+        font-size: 2.5rem;
+    }
+
+    .rectangle {
+        width: 90%;
+        height: auto;
+    }
+
+    .forecast-container {
+        flex-direction: column;
+    }
+
+    .forecast-day1-img, .forecast-day2-img, .forecast-day3-img {
+        width: 100%;
+        height: auto;
+    }
+}
+@media screen and (max-width: 375px) { /* kleine telefoon*/
+
+    /*home*/
+    body {
+        font-size: 2rem;
+    }
+
+    .rectangle {
+        width: 90%;
+        height: auto;
+    }
+
+    .forecast-container {
+        flex-direction: column;
+    }
+
+    .forecast-day1-img, .forecast-day2-img, .forecast-day3-img {
+        width: 100%;
+        height: auto;
+    }
+
+    /*info*/
+
+    .infoBackground {
+        width: 60rem;
+        height: 20rem;
+        background: rgb(70, 70, 70);
+        border-radius: 1.5rem;
+        position: absolute;
+        margin-top: 12rem;
+        margin-left: 23rem;
+    }
+   
+    .infoBackground h1 {
+        font-family: sans-serif;
+        font-size: 3rem;
+        color: rgb(255, 255, 255);
+        font-weight: 100;
+        text-align: center;
+        margin-top: 1rem;
+    }
+   
+    .infoBackground p {
+        font-family: sans-serif;
+        font-size: 2rem;
+        color: rgb(195, 195, 195);
+        font-weight: 100;
+        text-align: center;
+        padding: 2rem;
+    }
+   
+    .infoBackgroundTeam {
+        width: 60rem;
+        height: 20rem;
+        background: rgb(70, 70, 70);
+        border-radius: 1.5rem;
+        position: absolute;
+        margin-top: 38rem;
+        margin-left: 23rem;
+    }
+   
+    .infoBackgroundTeam h1 {
+        font-family: sans-serif;
+        font-size: 3rem;
+        color: rgb(255, 255, 255);
+        font-weight: 100;
+        text-align: center;
+        margin-top: 1rem;
+    }
+   
+    .infoBackgroundTeam li {
+        font-family: sans-serif;
+        font-size: 2rem;
+        color: rgb(195, 195, 195);
+        font-weight: 100;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    header p{
+        visibility: hidden;
+    }
+    header ul{
+        display: block;
+        width: 110vw;
+    }
+}
