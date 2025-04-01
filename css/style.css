@@ -104,7 +104,6 @@
      justify-content: center;
      background: linear-gradient(to bottom, #00BFFF, #87CEEB);
      font-size: 5rem;
-     color: white;
      gap: 2rem;
  }
 
@@ -112,7 +111,17 @@
      width: 20%;
      height: 20%;
      margin-bottom: 1rem;
+     margin-left: 2.5rem;
  }
+
+ .buitentemp > h2 {
+    font-size: 125%;
+ }
+
+.buitentemp > p {
+    text-decoration: underline;
+    color:black;
+}
 
 
  .rectangleParent {
