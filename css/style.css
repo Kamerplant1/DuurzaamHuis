@@ -142,7 +142,7 @@
  }
 
  .witscherm {
-     background: rgb(203, 203, 203);
+    background: rgb(203, 203, 203);
      width: 100%;
      height: 65vh;
      position: absolute;
@@ -325,37 +325,101 @@
          transform: translateY(0);
      }
  }
+
+ @media screen and (min-width: 960px) {
+    .witscherm{
+        height:70%;
+    }
+    .indexFooter{
+        display:none;
+    }
+ }
+
+
  @media screen and (max-width: 768px) { /*tablet*/
+
     body {
         font-size: 2.5rem;
     }
 
     .rectangle {
-        width: 90%;
-        height: auto;
+        width: 40rem;
+        height: 40rem;
     }
 
     .forecast-container {
         flex-direction: column;
     }
 
-    .forecast-day1-img, .forecast-day2-img, .forecast-day3-img {
-        width: 100%;
-        height: auto;
-    }
-}
-@media screen and (max-width: 375px) { /* kleine telefoon*/
 
-    /*home*/
+    .forecast-day1-img, .forecast-day2-img, .forecast-day3-img {
+        width: 50%;
+        height: 50%;
+    }
+    
+    .witscherm {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem; 
+        width: 100%;
+        height:100%;
+    }
+    
+    .indexFooter{
+        display:none;
+    }
+
+    .grafiek {
+        background: rgb(247, 247, 247);
+        height: 25rem;
+        width: 50rem;
+        border-radius:2rem;
+        padding:1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+ }
+
+   @media screen and (max-width:772px){
+        .logo,.bedrijfsNaam{
+            display:none;
+        }
+   }
+@media screen and ( max-width:375px) { /* kleine telefoon*/
     body {
-        font-size: 2rem;
+        font-size: 62.5%;
     }
 
     .rectangle {
         width: 90%;
-        height: auto;
+        height:auto;
     }
 
+    .rectanglerow1{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        height:30rem;
+        width:90%
+    }
+
+    .rectanglerow2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding:2rem;
+    height:25rem;
+    }
+
+    .bedrijfsNaam{
+        display:none;
+    }
+    .logo{
+        display: none;
+    }
     .forecast-container {
         flex-direction: column;
     }
@@ -363,6 +427,12 @@
     .forecast-day1-img, .forecast-day2-img, .forecast-day3-img {
         width: 100%;
         height: auto;
+    }
+    .indexHeader{
+        width:100%;
+    }
+    .indexFooter{
+        display:none;
     }
 
     /*info*/
@@ -422,14 +492,9 @@
         text-align: center;
         margin-top: 1rem;
     }
-    header p{
-        visibility: hidden;
+
+    .header{
+        width: 100%;
     }
-    header ul{
-        display: block;
-        width: 110vw;
-    }
-    header{
-        width: 100vw;
-    }
+
 }
