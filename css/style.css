@@ -112,8 +112,12 @@
      width: 20%;
      height: 20%;
      margin-bottom: 1rem;
+     margin-left:3rem;
  }
 
+.buitentemp > h2 {
+    font-size: 125%;
+}
 
  .rectangleParent {
     display: flex;
@@ -259,7 +263,6 @@
      animation: fadeIn 1.5s ease-out forwards;
      animation-delay: 0.3s;
  }
-
  /*vanaf hier is forecast (jasper)*/
  #jasper-weather,
  #general-weather {

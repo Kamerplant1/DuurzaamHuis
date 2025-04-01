@@ -1,4 +1,3 @@
-console.log("JS is loaded");
 
 function updateTime() {
     const now = new Date();
@@ -25,7 +24,7 @@ updateImage();
 setInterval(updateTime, 1000);
 setInterval(updateImage, 60000);
 
-// Weather API for current temperature (Jasper)
+//Actuale Buiten-temperatuur (Tristan)
 const buitentemperatuur = document.getElementById("js--actuelebuitentemp");
 const weatherImage = document.getElementById("js--weatherImg");
 const weatherType = document.getElementById("js--weatherType");
@@ -43,15 +42,17 @@ function updateWeatherData() {
             weatherType.innerText = tempData.samenv;
 
             if (temperature < 10) {
-                weatherImage.src = "../img/cold.png";
+                weatherImage.src = "./img/cold.png";
             } else {
-                weatherImage.src = "../img/warm.png";
+                weatherImage.src = "./img/warm.png";
             }
         });
 }
 
 setInterval(updateWeatherData, 3000);
 updateWeatherData();
+// einde van actuele buitenTemperatuur (Tristan)
+
 
 // Weather forecast API (Jasper)
 const apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=52.374&longitude=4.8897&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=Europe/Amsterdam";
