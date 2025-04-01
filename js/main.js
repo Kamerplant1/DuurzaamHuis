@@ -24,7 +24,11 @@ updateImage();
 setInterval(updateTime, 1000);
 setInterval(updateImage, 60000);
 
+<<<<<<< HEAD
 //Actuale Buiten-temperatuur (Tristan)
+=======
+// Weather API for current temperature (Tristan)
+>>>>>>> 729499d50aa88d281915dc29e7592e4b58b1a393
 const buitentemperatuur = document.getElementById("js--actuelebuitentemp");
 const weatherImage = document.getElementById("js--weatherImg");
 const weatherType = document.getElementById("js--weatherType");

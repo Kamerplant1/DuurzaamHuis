@@ -11,9 +11,9 @@
 
 <body class="infoOverflow">
     <img src="img/Adobe Express - file.png" alt="">
-    <header>
-        <ul>
 
+    <header class="infoHeader">
+        <ul>
             <li><a href="index.html" class="headerText">HOME</a></li>
             <li><a href="info.html" class="headerText">INFO</a></li>
         </ul>
@@ -21,22 +21,27 @@
         <p>Naam</p>
     </header>
 
-    <div class="infoBackground">
-        <h1>Het doel</h1>
-        <p>Bij De Ruiters willen we duurzaamheid toegankelijk maken voor iedereen. Ons doel is om praktische tips en
-            inspiratie te bieden, zodat mensen bewustere keuzes kunnen maken in hun dagelijks leven. Samen streven we
-            naar een duurzamere toekomst voor onze planeet en volgende generaties.</p>
-    </div>
-    <div class="infoBackgroundTeam">
-        <h1>Het Team</h1>
-        <ul>
-            <li>Tristan Wals</li>
-            <li>Jasper Schipper</li>
-            <li>Jayden Natrop</li>
-        </ul>
+    <!-- FIX: Changed <container> to <div> -->
+    <div class="doelEnTeamParent">
+        <div class="infoBackground">
+            <h1>Het doel</h1>
+            <p>Bij De Ruiters willen we duurzaamheid toegankelijk maken voor iedereen. Ons doel is om praktische tips en
+                inspiratie te bieden, zodat mensen bewustere keuzes kunnen maken in hun dagelijks leven. Samen streven
+                we naar een duurzamere toekomst voor onze planeet en volgende generaties.</p>
+        </div>
+
+        <div class="infoBackgroundTeam">
+            <h1>Het Team</h1>
+            <ul>
+                <li>Tristan Wals</li>
+                <li>Jasper Schipper</li>
+                <li>Jayden Natrop</li>
+            </ul>
+        </div>
     </div>
 
     <div class="hexagonKiller"></div>
-    </div>
+
+</body> <!-- FIX: Added missing </body> -->
 
 </html>
