@@ -315,7 +315,7 @@
 /*tot hier is forecast (jasper)*/   
 
 .suncard {
-    background: linear-gradient(#fba43b, #FA891F);
+    background: linear-gradient(#fba43b, #bd5c00);
     padding: 2rem;
     border-radius: 1.5rem;
     text-align: center;
@@ -333,11 +333,15 @@
     }
     
     .suncard h2 {
-    line-height: 200% ;
-    margin: 0;
+    line-height: 150% ;
+    padding:1.5rem;
     font-size: 4rem;
     font-weight: bold;
     margin-top: 1rem;
+    }
+
+    .sundownupimg {
+        width: 30%;
     }
 
 
