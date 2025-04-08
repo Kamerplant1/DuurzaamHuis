@@ -314,6 +314,33 @@
 }
 /*tot hier is forecast (jasper)*/   
 
+.suncard {
+    background: linear-gradient(#fba43b, #FA891F);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 41rem;
+    height: 46rem;
+    display: inline-block;
+    }
+    
+    .sunIcon {
+    width: 10rem;
+    height: 10rem;
+    margin-top: 2rem;
+    }
+    
+    .suncard h2 {
+    line-height: 200% ;
+    margin: 0;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    }
+
+
  @keyframes fadeIn {
      0% {
          opacity: 0;

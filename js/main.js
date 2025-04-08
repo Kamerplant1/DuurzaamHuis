@@ -128,3 +128,24 @@ function updateWeatherUI(data) {
 }
 
 fetchWeatherData();
+
+//zonsondergang jayden
+const sunSet = document.getElementById("sunSet");
+const sunRise = document.getElementById("sunRise");
+
+function zonOpkomstAPI() {
+fetch("https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&formatted=0")
+.then(response => response.json())
+.then(RealData => {
+const options = { timeZone: "Europe/Madrid", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false };
+const localSunrise = new Date(RealData.results.sunrise).toLocaleTimeString("nl-NL", options);
+const localSunset = new Date(RealData.results.sunset).toLocaleTimeString("nl-NL", options);
+
+sunRise.innerHTML = `<bold>Zonsopkomst: </bold> <br> ${localSunrise}`;
+sunSet.innerHTML = `<bold>Zonsondergang: </bold> <br> ${localSunset}`;
+});
+}
+
+zonOpkomstAPI();
+
+//einde zonsondergang jayden
