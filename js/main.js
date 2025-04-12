@@ -149,3 +149,54 @@ sunSet.innerHTML = `<bold>Zonsondergang: </bold> <br> ${localSunset}`;
 zonOpkomstAPI();
 
 //einde zonsondergang jayden
+//start licht knop Tristan
+
+const knop = document.getElementById("lampknop--js");
+
+function buttonClick() {
+  knop.innerHTML = "UIT";
+  knop.style.backgroundColor = "rgb(255, 0, 0)";
+}
+
+knop.addEventListener("click", buttonClick);
+
+const toggleButton = document.getElementById('toggle-button');
+const statusText = document.getElementById('status');
+const lamp = document.getElementById('lamp--js');
+
+toggleButton.addEventListener('click', () => {
+  toggleButton.classList.toggle('on');
+
+  if (toggleButton.classList.contains('on')) {
+    statusText.textContent = 'On';
+    statusText.style.color = 'green';
+    lamp.src="img/lampAan.png";
+  } else {
+    statusText.textContent = 'Off';
+    statusText.style.color = 'red';
+    lamp.src="img/lampUit.png"
+  }
+});
+//charts
+const ctx = document.getElementById('JaydenGrafiek').getContext('2d');
+const myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"],
+    datasets: [{
+      label: 'Kwh',
+      data: [0.5, 1.2, 1.4, 1.5, 3.6, 5.3, 4.2, 6.1,8.1,3.5,0.1,4.6,5.3,0.0,0,8,1.2,1.5,1.8,2.5,8.1,2.3,10.2],
+      borderColor: 'rgb(75, 192, 192)',
+      fill: false
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Energie Verbruik'
+      }
+    }
+  }
+});
