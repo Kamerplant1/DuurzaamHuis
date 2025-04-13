@@ -155,7 +155,6 @@ const knop = document.getElementById("lampknop--js");
 
 function buttonClick() {
   knop.innerHTML = "UIT";
-  knop.style.backgroundColor = "rgb(255, 0, 0)";
 }
 
 knop.addEventListener("click", buttonClick);
@@ -168,26 +167,92 @@ toggleButton.addEventListener('click', () => {
   toggleButton.classList.toggle('on');
 
   if (toggleButton.classList.contains('on')) {
-    statusText.textContent = 'On';
-    statusText.style.color = 'green';
     lamp.src="img/lampAan.png";
   } else {
-    statusText.textContent = 'Off';
-    statusText.style.color = 'red';
     lamp.src="img/lampUit.png"
   }
 });
 //charts
 const ctx = document.getElementById('JaydenGrafiek').getContext('2d');
-const myChart = new Chart(ctx, {
+const luchtChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"],
+    labels: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
     datasets: [{
-      label: 'Kwh',
-      data: [0.5, 1.2, 1.4, 1.5, 3.6, 5.3, 4.2, 6.1,8.1,3.5,0.1,4.6,5.3,0.0,0,8,1.2,1.5,1.8,2.5,8.1,2.3,10.2],
-      borderColor: 'rgb(75, 192, 192)',
-      fill: false
+      label: 'Luchtvochtigheid (%)',
+      data: [85, 86, 87, 88, 89, 90, 88, 84, 80, 78, 75, 73, 70, 68, 66, 65, 67, 70, 74, 78, 81, 83, 84, 85],
+      borderColor: 'rgb(153, 102, 255)',
+      backgroundColor: 'rgba(153, 102, 255, 0.2)',
+      fill: true,
+      tension: 0.3
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false, // Zodat het goed schaalt in je card
+    plugins: {
+      title: {
+        display: true,
+        text: 'Luchtvochtigheid over de dag'
+      }
+    },
+    scales: {
+      y: {
+        title: {
+          display: true,
+          text: '%'
+        },
+        min: 50,
+        max: 100
+      }
+    }
+  }
+});
+
+
+const ctx2 = document.getElementById('TristanGrafiek').getContext('2d');
+const tempChart = new Chart(ctx2, {
+  type: 'line',
+  data: {
+    labels: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00',],
+    datasets: [
+      {
+        label: 'Binnentemperatuur (°C)',
+        data: [20, 20, 19.8, 19.5, 19.3, 19, 18.8, 19, 20.5, 21.2, 21.8, 22, 22.3, 22.5, 22.2, 21.9, 21.5, 21, 20.8, 20.6, 20.4, 20.2, 20, 19.9],
+        borderColor: 'rgb(255, 99, 132)',
+        fill: false
+      },
+      {
+        label: 'Buitentemperatuur (°C)',
+        data: [10, 9.5, 9, 8.8, 8.5, 8.2, 8.1, 8.4, 9, 10, 12, 14, 15.5, 17, 18, 18.2, 17.5, 16, 14, 13, 12, 11.5, 11, 10.5],
+        borderColor: 'rgb(54, 162, 235)',
+        fill: false
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Binnen- en Buitentemperatuur'
+      }
+    }
+  }
+});
+
+const ctx3 = document.getElementById('JasperGrafiek').getContext('2d');
+const zonneChart = new Chart(ctx3, {
+  type: 'line',
+  data: {
+    labels: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
+    datasets: [{
+      label: 'Zonnepanelen Opbrengst (kWh)',
+      data: [0, 0, 0, 0, 0, 0, 0.1, 0.5, 1.2, 2.5, 3.8, 4.5, 5.2, 5.3, 5.1, 4.6, 3.9, 2.8, 1.4, 0.5, 0.1, 0, 0, 0],
+      borderColor: 'rgb(255, 206, 86)',
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      fill: true,
+      tension: 0.3
     }]
   },
   options: {
@@ -195,8 +260,18 @@ const myChart = new Chart(ctx, {
     plugins: {
       title: {
         display: true,
-        text: 'Energie Verbruik'
+        text: 'Zonnepanelen Energie-opbrengst'
       }
+    },
+    scales: {
+      y: {
+        title: {
+          display: true,
+          text: 'kWh'
+        }
+      },
     }
   }
 });
+
+
