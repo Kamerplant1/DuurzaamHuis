@@ -98,11 +98,11 @@ function getWeatherIcon(weatherCode) {
     61: 'rain.png',
     71: 'rain.png',
     73: 'rain.png',
-    80: 'light-storm.png',
+    80: 'rain.png',
     95: 'storm.png'
   };
 
-  return weatherIcons[weatherCode] || 'default.png';
+  return weatherIcons[weatherCode] || 'rain.png';
 }
 
 function updateWeatherUI(data) {
@@ -162,16 +162,22 @@ knop.addEventListener("click", buttonClick);
 const toggleButton = document.getElementById('toggle-button');
 const statusText = document.getElementById('status');
 const lamp = document.getElementById('lamp--js');
+const lampStatus = document.getElementById("lampStatus--js");
 
+window.addEventListener('DOMContentLoaded', () => {
+  lampStatus.innerHTML = "uit";
+});
 toggleButton.addEventListener('click', () => {
   toggleButton.classList.toggle('on');
 
   if (toggleButton.classList.contains('on')) {
     lamp.src = "img/lampAan.png";
     lamp.style.filter = "drop-shadow(0 0 7rem rgb(255, 208, 0))";
+    lampStatus.innerHTML = "aan";
 } else {
     lamp.src = "img/lampUit.png";
-    lamp.style.filter = "none"; // Zorg dat het licht-effect verdwijnt als de lamp uit is
+    lamp.style.filter = "none";
+    lampStatus.innerHTML = "uit";
 }
 
 });
