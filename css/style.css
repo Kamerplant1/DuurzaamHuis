@@ -367,7 +367,7 @@
 
 
 
- .rectangleTristan2 {
+ .rectanglerow2 {
      background: linear-gradient(to top, #5c5c5c, #acacac);
  }
 
@@ -428,9 +428,73 @@
      color: #333;
  }
  /*vanaf hier is Jayden 2e rij*/
-.lampStatush2{
-font-size: 2rem;
+ .lampStatush2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10rem;
+    font-size: 3rem;
+    gap: -1rem;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    font-family: 'Arial', sans-serif;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
+
+.lampStatush2 > span {
+    font-size: 150%;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    color: #333;
+}
+
+.lampStatush2 p {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 300;
+}
+
+.lampStatush2 .status {
+    margin-top: 1rem;
+    background-color: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* einde jayden2derij*/
+
+/* begin van jasper 2de rij*/
+.timer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .status-display {
+    font-size: 3rem;
+    margin-top: 10rem;
+    font-size: 3rem;
+    gap:-1rem;
+  }
+  
+  .countdown-display {
+    margin-top: 10rem;
+    font-size: 3rem;
+    gap:1rem;
+    padding:1rem;
+    box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.25);
+    border-radius: 1rem;
+    background:black;
+    font-size: 3rem;
+    color: #000000;
+  }
 
  @keyframes fadeIn {
      0% {

@@ -66,15 +66,19 @@
         </div>
 
         <div class="rectangle suncard rectanglerow1">
-            <h2 id="sunRise"></h2>
-            <img class="sundownupimg" src="img/sundownup.webp" alt="dit is een icon van een zonsopkomst/ondergang">
-            <h2 id="sunSet"></h2>
+            <h2 class="fade-in" id="sunRise"></h2>
+            <img class="sundownupimg fade-in" src="img/sundownup.webp" alt="dit is een icon van een zonsopkomst/ondergang">
+            <h2 class="fade-in" id="sunSet"></h2>
         </div>
 
 
-        <div class="rectangle rectanglerow2">
-            <p>Jasper</p>
+        <div class="rectangle rectanglerow2 rectangleJasper2">
+            <div class="timer-container">
+                <div id="lamp-status" class="status-display"></div>
+                <div id="countdown-timer" class="countdown-display"></div>
+              </div>
         </div>
+
         <div class="rectangle rectanglerow2 rectangleTristan2">
             <p>Tristan</p>
             <img class="lamp" id="lamp--js" src="img/lampUit.png" alt="Lamp die uit is">
@@ -87,8 +91,7 @@
 
         </div>
         <div class="rectangle rectanglerow2">
-            <p>Jayden</p>
-            <h2 class="lampStatush2">De lamp is nu <span class="lampStatush2" id="lampStatus--js"></span></h2>
+            <h2 class="lampStatush2">De lamp is nu: <span class="lampStatush2" id="lampStatus--js"></span></h2>
         </div>
     </div>
     </div>

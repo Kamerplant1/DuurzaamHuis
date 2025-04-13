@@ -150,7 +150,6 @@ zonOpkomstAPI();
 
 //einde zonsondergang jayden
 //start licht knop Tristan
-
 const knop = document.getElementById("lampknop--js");
 
 function buttonClick() {
@@ -174,14 +173,56 @@ toggleButton.addEventListener('click', () => {
     lamp.src = "img/lampAan.png";
     lamp.style.filter = "drop-shadow(0 0 7rem rgb(255, 208, 0))";
     lampStatus.innerHTML = "aan";
+    lampStatus.style.color = "green";
 } else {
     lamp.src = "img/lampUit.png";
     lamp.style.filter = "none";
     lampStatus.innerHTML = "uit";
+    lampStatus.style.color = "darkred";
 }
 
 });
-//charts
+// einde licht knop van Tristan
+
+// start bepaalde tijd lamp aan/uit van jasper
+let lampStatus1 = document.getElementById("lamp-status");
+let countdownTimer = document.getElementById("countdown-timer");
+
+function setTimer() {
+  let currentTime = new Date();
+  let currentHour = currentTime.getHours();
+  let currentMinute = currentTime.getMinutes();
+  let countdown = 0;
+  let lampOnTime = 18;
+  let lampOffTime = 6;
+  
+  let nextEventTime = 0;
+  
+  if (currentHour >= lampOnTime || currentHour < lampOffTime) {
+    lampStatus1.innerText = "Lamp gaat aan over: ";
+    nextEventTime = lampOnTime - currentHour;
+    if (nextEventTime < 0) nextEventTime += 24;
+  } else {
+    lampStatus1.innerText = "Lamp gaat uit";
+    nextEventTime = lampOffTime - currentHour;
+    if (nextEventTime < 0) nextEventTime += 24;
+  }
+
+  let totalMinutes = nextEventTime * 60 - currentMinute;
+  let hoursRemaining = Math.floor(totalMinutes / 60);
+  let minutesRemaining = totalMinutes % 60;
+
+  countdownTimer.innerText = ` ${hoursRemaining} uur en ${minutesRemaining} minuten`;
+  countdownTimer.style.color = "white";
+}
+
+setInterval(setTimer, 60000);
+setTimer();
+
+
+// eind bepaalde tijd lamp aan/uit jasper
+
+//charts van Tristan Jayden en Jasper
 const ctx = document.getElementById('JaydenGrafiek').getContext('2d');
 const luchtChart = new Chart(ctx, {
   type: 'line',
@@ -198,7 +239,7 @@ const luchtChart = new Chart(ctx, {
   },
   options: {
     responsive: true,
-    maintainAspectRatio: false, // Zodat het goed schaalt in je card
+    maintainAspectRatio: false,
     plugins: {
       title: {
         display: true,
@@ -283,4 +324,4 @@ const zonneChart = new Chart(ctx3, {
   }
 });
 
-
+// einde van charts
