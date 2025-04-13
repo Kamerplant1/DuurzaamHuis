@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1g">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Home Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,7 +20,7 @@
             <li><a href="info.html" class="headerText">INFO</a></li>
         </ul>
         <img class="logo" src="img/logo2.png" alt="logo van ons bedrijf">
-        <p class="bedrijfsNaam" ><strong>De Ruiters</strong></p>
+        <p class="bedrijfsNaam"><strong>De Ruiters</strong></p>
     </header>
 
     <div class="clockOutline">
@@ -61,18 +65,28 @@
 
         <div class="rectangle suncard rectanglerow1">
             <h2 id="sunRise"></h2>
-            <img class="sundownupimg" src="/img/sundownup.webp" alt="dit is een icon van een zonsopkomst/ondergang">
+            <img class="sundownupimg" src="img/sundownup.webp" alt="dit is een icon van een zonsopkomst/ondergang">
             <h2 id="sunSet"></h2>
         </div>
+
 
         <div class="rectangle rectanglerow2">
             <p>Jasper</p>
         </div>
         <div class="rectangle rectanglerow2">
             <p>Tristan</p>
+            <img class="lamp" id="lamp--js" src="img/lampUit.png" alt="Lamp die uit is">
+            <button class="lampButton" id="lampknop--js">AAN</button>
+            <button id="toggle-button" class="toggle-button">
+                <span class="toggle-slider"></span>
+                ‎
+            </button>
+            <p id="status">Off</p>
+
         </div>
         <div class="rectangle rectanglerow2">
             <p>Jayden</p>
+        </div>
     </div>
     </div>
     <div class="witscherm">
@@ -83,7 +97,7 @@
             <p>Tristan</p>
         </div>
         <div class="grafiek singlerow">
-            <p>Jayden</p>
+            <canvas class="jaydengrafiek" id="JaydenGrafiek" width="100" height="100"></canvas>
         </div>
     </div>
 

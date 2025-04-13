@@ -39,7 +39,13 @@
      margin-top: -7rem;
      margin-left: 10rem;
      font-size: large;
+     font-family: orbitron;
  }
+ header p{
+    display: flex;
+    font-weight: bolder;
+    font-size: large;
+}
 
  header :not(img) {
      display: flex;
@@ -102,7 +108,7 @@
      flex-direction: column;
      align-items: center;
      justify-content: center;
-     background: linear-gradient(to bottom, #00BFFF, #87CEEB);
+     background: linear-gradient(to top, #acacac, #5c5c5c);
      font-size: 5rem;
      gap: 2rem;
  }
@@ -114,23 +120,23 @@
      margin-left: 2.5rem;
  }
 
- .buitentemp > h2 {
-    font-size: 125%;
+ .buitentemp>h2 {
+     font-size: 125%;
  }
 
-.buitentemp > p {
-    text-decoration: underline;
-    color:black;
-}
+ .buitentemp>p {
+     text-decoration: underline;
+     color: black;
+ }
 
 
  .rectangleParent {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 4rem;
-    margin-top: 5rem;
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     flex-wrap: wrap;
+     gap: 4rem;
+     margin-top: 5rem;
  }
 
  .rectangle p {
@@ -142,7 +148,7 @@
  }
 
  .witscherm {
-    background: rgb(203, 203, 203);
+     background: rgb(203, 203, 203);
      width: 100%;
      height: 65vh;
      position: absolute;
@@ -277,7 +283,7 @@
      align-items: center;
      justify-content: center;
      text-align: center;
-     background-color: rgba(255, 255, 255, 0.9);
+     background: linear-gradient(to top, #acacac, #5c5c5c);
      border-radius: 1rem;
  }
 
@@ -305,44 +311,116 @@
  }
 
  .fade-in-2 {
-    opacity: 0;
-    animation: fadeIn 2s ease-in-out forwards;
-}
-.fade-in-3{
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards;
-}
-/*tot hier is forecast (jasper)*/   
+     opacity: 0;
+     animation: fadeIn 2s ease-in-out forwards;
+ }
 
-.suncard {
-    background: linear-gradient(#fba43b, #bd5c00);
-    padding: 2rem;
-    border-radius: 1.5rem;
-    text-align: center;
-    color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 41rem;
-    height: 46rem;
-    display: inline-block;
-    }
-    
-    .sunIcon {
-    width: 10rem;
-    height: 10rem;
-    margin-top: 2rem;
-    }
-    
-    .suncard h2 {
-    line-height: 150% ;
-    padding:1.5rem;
-    font-size: 4rem;
-    font-weight: bold;
+ .fade-in-3 {
+     opacity: 0;
+     animation: fadeIn 1s ease-in-out forwards;
+ }
+
+ /*tot hier is forecast (jasper)*/
+
+ .suncard {
+     background: linear-gradient(to top, #acacac, #5c5c5c);
+     padding: 2rem;
+     border-radius: 1.5rem;
+     text-align: center;
+     color: white;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     width: 41rem;
+     height: 46rem;
+     display: inline-block;
+ }
+
+ .sunIcon {
+     width: 10rem;
+     height: 10rem;
+     margin-top: 2rem;
+ }
+
+ .suncard h2 {
+     line-height: 150%;
+     padding: 1.5rem;
+     font-size: 4rem;
+     font-weight: bold;
+     margin-top: 1rem;
+ }
+
+ .sundownupimg {
+     width: 30%;
+ }
+
+ /*vanaf hier is tristan tweede rij*/
+ .lampButton {
+     width: 150px;
+     height: 70px;
+     border-radius: 10px;
+     border: none;
+     background: linear-gradient(to top, #13fc13, #8cff88);
+     color: rgb(33, 33, 33);
+     font-size: large;
+     visibility: hidden;
+
+ }
+
+ .rectanglerow2 button:hover {
+     cursor: pointer;
+ }
+ .rectanglerow2 img{
+    width: 200px;
+    height: 400px;
     margin-top: 1rem;
-    }
+    margin-left: 11rem;
+    position: absolute;
+ }
 
-    .sundownupimg {
-        width: 30%;
-    }
+ /* Button styles */
+ .toggle-button {
+     position: relative;
+     width: 80px;
+     height: 40px;
+     background-color: #ddd;
+     border-radius: 50px;
+     border: none;
+     cursor: pointer;
+     outline: none;
+     transition: background-color 0.3s ease;
+     margin-top: 40rem;
+     margin-left: 1.5rem;
+ }
+
+ .rectanglerow2 p {
+     visibility: hidden;
+ }
+
+ .toggle-slider {
+     position: absolute;
+     top: 5px;
+     left: 5px;
+     width: 30px;
+     height: 30px;
+     background-color: #fff;
+     border-radius: 50%;
+     transition: transform 0.3s ease;
+ }
+
+ .toggle-button.on {
+     background-color: #4caf50;
+ }
+
+ .toggle-button.on .toggle-slider {
+     transform: translateX(40px);
+ }
+
+ /* Text style for the status */
+ #status {
+     font-size: 20px;
+     margin-top: 20px;
+     font-weight: bold;
+     color: #333;
+ }
 
 
  @keyframes fadeIn {
@@ -358,174 +436,188 @@
  }
 
  @media screen and (min-width: 960px) {
-    .witscherm{
-        height:70%;
-    }
-    .indexFooter{
-        display:none;
-    }
+     .witscherm {
+         height: 70%;
+     }
+
+     .indexFooter {
+         display: none;
+     }
  }
 
 
- @media screen and (max-width: 768px) { /*tablet*/
+ @media screen and (max-width: 768px) {
+     /*tablet*/
 
-    body {
-        font-size: 2.5rem;
-    }
+     body {
+         font-size: 2.5rem;
+     }
 
-    .rectangle {
-        width: 40rem;
-        height: 40rem;
-    }
+     .rectangle {
+         width: 40rem;
+         height: 40rem;
+     }
 
-    .forecast-container {
-        flex-direction: column;
-    }
+     .forecast-container {
+         flex-direction: column;
+     }
 
 
-    .forecast-day1-img, .forecast-day2-img, .forecast-day3-img {
-        width: 50%;
-        height: 50%;
-    }
-    
-    .witscherm {
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem; 
-        width: 100%;
-        height:100%;
-    }
-    
-    .indexFooter{
-        display:none;
-    }
+     .forecast-day1-img,
+     .forecast-day2-img,
+     .forecast-day3-img {
+         width: 50%;
+         height: 50%;
+     }
 
-    .grafiek {
-        background: rgb(247, 247, 247);
-        height: 25rem;
-        width: 50rem;
-        border-radius:2rem;
-        padding:1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+     .witscherm {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 2rem;
+         width: 100%;
+         height: 100%;
+     }
+
+     .indexFooter {
+         display: none;
+     }
+
+     .grafiek {
+         background: rgb(247, 247, 247);
+         height: 25rem;
+         width: 50rem;
+         border-radius: 2rem;
+         padding: 1rem;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+     }
  }
 
-   @media screen and (max-width:772px){
-        .logo,.bedrijfsNaam{
-            display:none;
-        }
-   }
-@media screen and ( max-width:375px) { /* kleine telefoon*/
-    body {
-        font-size: 62.5%;
-    }
+ @media screen and (max-width:772px) {
 
-    .rectangle {
-        width: 90%;
-        height:auto;
-    }
+     .logo,
+     .bedrijfsNaam {
+         display: none;
+     }
+ }
 
-    .rectanglerow1{
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        height:30rem;
-        width:90%
-    }
+ @media screen and (max-width:375px) {
 
-    .rectanglerow2{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    padding:2rem;
-    height:25rem;
-    }
+     /* kleine telefoon*/
+     body {
+         font-size: 62.5%;
+     }
 
-    .bedrijfsNaam{
-        display:none;
-    }
-    .logo{
-        display: none;
-    }
-    .forecast-container {
-        flex-direction: column;
-    }
+     .rectangle {
+         width: 90%;
+         height: auto;
+     }
 
-    .forecast-day1-img, .forecast-day2-img, .forecast-day3-img {
-        width: 100%;
-        height: auto;
-    }
-    .indexHeader{
-        width:100%;
-    }
-    .indexFooter{
-        display:none;
-    }
+     .rectanglerow1 {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 30rem;
+         width: 90%
+     }
 
-    /*info*/
+     .rectanglerow2 {
+         display: flex;
+         justify-content: space-evenly;
+         align-items: center;
+         flex-wrap: wrap;
+         padding: 2rem;
+         height: 25rem;
+     }
 
-    .infoBackground {
-        width: 60rem;
-        height: 20rem;
-        background: rgb(70, 70, 70);
-        border-radius: 1.5rem;
-        position: absolute;
-        margin-top: 12rem;
-        margin-left: 23rem;
-    }
-   
-    .infoBackground h1 {
-        font-family: sans-serif;
-        font-size: 3rem;
-        color: rgb(255, 255, 255);
-        font-weight: 100;
-        text-align: center;
-        margin-top: 1rem;
-    }
-   
-    .infoBackground p {
-        font-family: sans-serif;
-        font-size: 2rem;
-        color: rgb(195, 195, 195);
-        font-weight: 100;
-        text-align: center;
-        padding: 2rem;
-    }
-   
-    .infoBackgroundTeam {
-        width: 60rem;
-        height: 20rem;
-        background: rgb(70, 70, 70);
-        border-radius: 1.5rem;
-        position: absolute;
-        margin-top: 38rem;
-        margin-left: 23rem;
-    }
-   
-    .infoBackgroundTeam h1 {
-        font-family: sans-serif;
-        font-size: 3rem;
-        color: rgb(255, 255, 255);
-        font-weight: 100;
-        text-align: center;
-        margin-top: 1rem;
-    }
-   
-    .infoBackgroundTeam li {
-        font-family: sans-serif;
-        font-size: 2rem;
-        color: rgb(195, 195, 195);
-        font-weight: 100;
-        text-align: center;
-        margin-top: 1rem;
-    }
+     .bedrijfsNaam {
+         display: none;
+     }
 
-    .header{
-        width: 100%;
-    }
+     .logo {
+         display: none;
+     }
 
-}
+     .forecast-container {
+         flex-direction: column;
+     }
+
+     .forecast-day1-img,
+     .forecast-day2-img,
+     .forecast-day3-img {
+         width: 100%;
+         height: auto;
+     }
+
+     .indexHeader {
+         width: 100%;
+     }
+
+     .indexFooter {
+         display: none;
+     }
+
+     /*info*/
+
+     .infoBackground {
+         width: 60rem;
+         height: 20rem;
+         background: rgb(70, 70, 70);
+         border-radius: 1.5rem;
+         position: absolute;
+         margin-top: 12rem;
+         margin-left: 23rem;
+     }
+
+     .infoBackground h1 {
+         font-family: sans-serif;
+         font-size: 3rem;
+         color: rgb(255, 255, 255);
+         font-weight: 100;
+         text-align: center;
+         margin-top: 1rem;
+     }
+
+     .infoBackground p {
+         font-family: sans-serif;
+         font-size: 2rem;
+         color: rgb(195, 195, 195);
+         font-weight: 100;
+         text-align: center;
+         padding: 2rem;
+     }
+
+     .infoBackgroundTeam {
+         width: 60rem;
+         height: 20rem;
+         background: rgb(70, 70, 70);
+         border-radius: 1.5rem;
+         position: absolute;
+         margin-top: 38rem;
+         margin-left: 23rem;
+     }
+
+     .infoBackgroundTeam h1 {
+         font-family: sans-serif;
+         font-size: 3rem;
+         color: rgb(255, 255, 255);
+         font-weight: 100;
+         text-align: center;
+         margin-top: 1rem;
+     }
+
+     .infoBackgroundTeam li {
+         font-family: sans-serif;
+         font-size: 2rem;
+         color: rgb(195, 195, 195);
+         font-weight: 100;
+         text-align: center;
+         margin-top: 1rem;
+     }
+
+     .header {
+         width: 100%;
+     }
+ }
