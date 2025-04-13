@@ -41,11 +41,12 @@
      font-size: large;
      font-family: orbitron;
  }
- header p{
-    display: flex;
-    font-weight: bolder;
-    font-size: large;
-}
+
+ header p {
+     display: flex;
+     font-weight: bolder;
+     font-size: large;
+ }
 
  header :not(img) {
      display: flex;
@@ -362,18 +363,24 @@
      color: rgb(33, 33, 33);
      font-size: large;
      visibility: hidden;
+ }
 
+
+
+ .rectangleTristan2 {
+     background: linear-gradient(to top, #5c5c5c, #acacac);
  }
 
  .rectanglerow2 button:hover {
      cursor: pointer;
  }
- .rectanglerow2 img{
-    width: 200px;
-    height: 400px;
-    margin-top: 1rem;
-    margin-left: 11rem;
-    position: absolute;
+
+ .rectanglerow2 img {
+     width: 200px;
+     height: 400px;
+     margin-top: 1rem;
+     margin-left: 11rem;
+     position: absolute;
  }
 
  /* Button styles */
@@ -461,9 +468,10 @@
          flex-direction: column;
      }
 
-     .suncard{
-        width:36rem;
+     .suncard {
+         width: 36rem;
      }
+
      .forecast-day1-img,
      .forecast-day2-img,
      .forecast-day3-img {
